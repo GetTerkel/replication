@@ -3,7 +3,7 @@ import { sendSampleEmailStep } from "./steps";
 export async function sampleWorkflow() {
   "use workflow";
 
-  await sendSampleEmailStep();
+  const result = await sendSampleEmailStep();
 
-  return { success: true };
+  return { success: true, result };
 }

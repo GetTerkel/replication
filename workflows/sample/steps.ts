@@ -10,18 +10,21 @@ export async function sendSampleEmailStep() {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "Acme <anuj@featured.com>",
+      from: "community@featured.com",
       to: ["anuj@featured.com"],
       subject: "Hello world",
       react: MyEmail(),
     });
 
     if (error) {
+      console.error(error);
       return Response.json({ error }, { status: 500 });
     }
 
+    console.log(data);
     return Response.json(data);
   } catch (error) {
+    console.error(error);
     return Response.json({ error }, { status: 500 });
   }
 }
