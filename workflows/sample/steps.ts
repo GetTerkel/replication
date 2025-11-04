@@ -10,8 +10,8 @@ export async function sendSampleEmailStep() {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: "community@featured.com",
-      to: ["anuj@featured.com"],
+      from: "alice@someone.com",
+      to: ["bob@someone.com"],
       subject: "Hello world",
       react: MyEmail(),
     });
